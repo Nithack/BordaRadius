@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body scroll="no">
+    <div id="conteudo">
+        <div class="topoApresentacao">
+            <h1>BRG Simples</h1>
+            <h6>Border Radiuns Generator</h6>
+        </div>
+        <div id="escopocentral">
+            <div id="calcradius">
+                <div class="grid bordaradius">
+                    <input class="item inputHTop" type="number"  scroll="no" value="0" onblur="inputHTop()">
+                    <input class="item inputLTop" type="number" scroll="no" value="0" onblur="inputLTop()">
+                    <div id="blocoradius" class="item blocoradius" style="color:red"></div>
+                    <input class="item inputHBot" type="number" scroll="no" value="0" onblur="inputHBot()">
+                    <input class="item inputLBot" type="number" scroll="no" value="0" onblur="inputLBot()">
+                </div>
+            </div>    
+              
+            <div class="clipbord">
+
+                <!-- The text field -->
+                <input id="myInputtl" class="codigocss" value="border-top-left-radius: 0;">
+                <input id="myInputtr" class="codigocss" value="border-top-right-radius: 0;">
+                <input id="myInputbl" class="codigocss" value="border-bottom-right-radius: 0;">
+                <input id="myInputbr" class="codigocss" value="border-bottom-left-radius: 0;">
+                <button onclick="myFunction()">Copy text</button>
+                <input id="resultadocss" type="text">
+            </div>   
+            
+        </div>
+    </div>
+    <div class="rodape"><a href="https://www.linkedin.com/in/andreynithack/"><img class="linkedin" src="./rest/linkedin-brands.svg" alt="linkedin"></a><a class="github" href="https://github.com/andreynithack/BordaRadius.git"><img src="./rest/github-square-brands.svg" alt=""></a>
+        
+    </div>
+    <script>
+            
+
+        function myFunction() {
+            var inputHTop = document.getElementById('myInputtr')
+            var inputLTop = document.getElementById('myInputtl')
+            var inputHBot = document.getElementById('myInputbr')
+            var inputLBot = document.getElementById('myInputbl')
+            var textocopy = document.getElementById('resultadocss')
+            textocopy.value = inputHTop.value + inputHTop.value + inputLBot.value + inputLTop.value
+           console.log(textocopy)
+            textocopy.select()
+            document.execCommand("copy");
+            alert("Copied");
+        }
+
+        function inputHTop() {
+            var inputHTop = document.querySelector("input.inputHTop")
+            var blocoradius = document.getElementById("blocoradius")
+            var inputHTopInput = document.getElementById('myInputtr')
+            var px = "px"
+            console.log(inputHTop.value)
+            inputHTopInput.value ='border-top-right-radius: '+ inputHTop.value + px +"; "
+            blocoradius.style.borderTopRightRadius = inputHTop.value + px     
+
+}   
+        function inputLTop() {
+            var inputLTop = document.querySelector("input.inputLTop")
+            var blocoradius = document.getElementById("blocoradius")
+            var inputLTopInput = document.getElementById('myInputtl')
+            var px = "px"
+            console.log(inputLTop.value)
+            inputLTopInput.value ='border-top-left-radius: '+ inputLTop.value + px +"; "
+            blocoradius.style.borderTopLeftRadius = inputLTop.value + px      
+
+}       
+            function inputHBot() {
+            var inputHBot = document.querySelector("input.inputHBot")
+            var blocoradius = document.getElementById("blocoradius")
+            var inputHBotInput = document.getElementById('myInputbr')
+            var px = "px"
+            console.log(inputHBot.value)
+            inputHBotInput.value ='border-bottom-right-radius: '+ inputHBot.value + px +"; "
+            blocoradius.style.borderBottomRightRadius = inputHBot.value + px  
+ 
+}           
+            function inputLBot() {
+            var inputLBot = document.querySelector("input.inputLBot")
+            var blocoradius = document.getElementById("blocoradius")
+            var inputLBotInput = document.getElementById('myInputbl')
+            var px = "px"
+            console.log(inputLBot.value)
+            inputLBotInput.value ='border-bottom-left-radius: '+ inputLBot.value + px +"; "
+            blocoradius.style.borderBottomLeftRadius = inputLBot.value + px 
+   
+}
+
+    </script>
+</body>
+</html>
